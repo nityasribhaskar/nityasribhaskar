@@ -1,1 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Student Portfolio – Your Name</title>
 
+  <style>
+    body {
+      margin: 0;
+      font-family: "Segoe UI", sans-serif;
+      background: #f6f9fc;
+      color: #1f2937;
+      line-height: 1.6;
+    }
+
+    /* HEADER */
+    header {
+      background: linear-gradient(135deg, #1a4d5c, #2d7a8f);
+      color: white;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 36px;
+      font-weight: 700;
+    }
+
+    header p {
+      margin-top: 8px;
+      font-size: 18px;
+      opacity: 0.95;
+    }
+
+    /* CIRCULAR IMAGE STYLE */
+    .circular-image {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      display: block;
+      margin: 0 auto 20px;
+      border: 4px solid white;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    /* NAVIGATION */
+    nav {
+      background: white;
+      border-bottom: 1px solid #e5e7eb;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .nav-container {
+      max-width: 1000px;
+      margin: auto;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 20px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #374151;
+      font-weight: 500;
+    }
+
+    .nav-links a:hover {
+      color: #0ea5e9;
+    }
+
+    /* HAMBURGER */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      gap: 5px;
+    }
+
+    .hamburger span {
+      width: 25px;
+      height: 3px;
+      background: #374151;
+      border-radius: 3px;
+    }
+
+    /* MOBILE MENU */
+    .mobile-menu {
+      display: none;
+      flex-direction: column;
+      background: white;
+      padding: 10px 20px;
+      border-bottom: 1px solid #e5e7eb;
+    }
+
+    .mobile-menu a {
+      padding: 10px 0;
+      text-decoration: none;
+      color: #374151;
+      border-bottom: 1px solid #e5e7eb;
+    }
+
+    .mobile-menu a:last-child {
+      border-bottom: none;
+    }
+
+    /* SECTIONS */
+    section {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    section h2 {
+      font-size: 26px;
+      margin-bottom: 16px;
+      color: #1a4d5c;
+      border-left: 4px solid #2d7a8f;
+      padding-left: 10px;
+    }
+
+    .card {
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+      margin-bottom: 20px;
+    }
+
+    .card h3 {
+      margin-top: 0;
+      font-size: 20px;
+      color: #1f2937;
+    }
+
+    .tags span {
+      display: inline-block;
+      background: #d4e8f0;
+      color: #1a4d5c;
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 12px;
+      margin-right: 6px;
+      margin-top: 6px;
+    }
+
+    /* FOOTER */
+    footer {
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+      background: #eef2f7;
+      color: #6b7280;
+      font-size: 14px;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+      }
+
+      .hamburger {
+        display: flex;
+      }
+    }
+  </style>
+
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById("mobileMenu");
+      menu.style.display = menu.style.display === "flex" ? "none" : "flex";
+    }
+  </script>
+</head>
+
+<body>
+
+<header>
+  <img src="images/mypic.jpg" alt="Student Photo" class="circular-image">
+  <h1>Nityasri Bhaskar</h1>
+  <p>Future Medical Professional · High School Student · Passionate about mathematics, medicine and STEM leadership</p>
+</header>
+
+<nav>
+  <div class="nav-container">
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#coursework">Coursework</a>
+      <a href="#achievements">Achievements</a>
+      <a href="#volunteering">Volunteering</a>
+      <a href="#extracurriculars">Extracurriculars</a>
+    </div>
+
+    <div class="hamburger" onclick="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+
+  <div id="mobileMenu" class="mobile-menu">
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+    <a href="#coursework">Coursework</a>
+    <a href="#achievements">Achievements</a>
+    <a href="#volunteering">Volunteering</a>
+    <a href="#extracurriculars">Extracurriculars</a>
+  </div>
+</nav>
+
+<section id="about">
+  <h2>About Me</h2>
+  <div class="card">
+    <p>
+      I am a high school student passionate about medicine, community health, and scientific discovery.
+      I am seeking opportunities to volunteer in healthcare settings and gain hands‑on experience through
+      internships in hospitals, clinics, or research labs. My long‑term goal is to pursue a career in medicine
+      and contribute to patient care and medical innovation.
+    </p>
+  </div>
+</section>
+
+<section id="projects">
+  <h2>Projects</h2>
+
+  <div class="card">
+    <h3>Human Anatomy Study Guide Website</h3>
+    <p>Created an interactive website to help students learn anatomy through diagrams, quizzes, and summaries.</p>
+    <div class="tags">
+      <span>Biology</span><span>HTML/CSS</span><span>Education</span>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>Science Fair Project: Heart Rate & Exercise</h3>
+    <p>Analyzed how different exercise intensities affect heart rate recovery time.</p>
+    <div class="tags">
+      <span>Physiology</span><span>Data Analysis</span><span>STEM</span>
+    </div>
+  </div>
+</section>
+
+<section id="coursework">
+  <h2>Coursework</h2>
+
+  <div class="card">
+    <h3>Advanced Science Courses</h3>
+    <p>Biology Honors, AP Biology, Chemistry Honors, Anatomy & Physiology, AP Psychology.</p>
+  </div>
+
+  <div class="card">
+    <h3>Relevant Skills</h3>
+    <p>Lab techniques, scientific writing, data interpretation, teamwork, patient‑care basics.</p>
+  </div>
+</section>
+
+<section id="achievements">
+  <h2>Achievements</h2>
+
+  <div class="card">
+    <h3>Academic Awards</h3>
+    <p>Honor Roll, Biology Olympiad Participant, Science Fair Finalist.</p>
+  </div>
+
+  <div class="card">
+    <h3>Certifications</h3>
+    <p>CPR & First Aid Certified, Medical Terminology Certificate.</p>
+  </div>
+</section>
+
+<section id="volunteering">
+  <h2>Volunteering</h2>
+
+  <div class="card">
+    <h3>Hospital or Clinic Volunteering</h3>
+    <p>Assisted with patient transport, front desk support, and organizing supplies.</p>
+  </div>
+
+  <div class="card">
+    <h3>Community Health Events</h3>
+    <p>Participated in blood drives, health fairs, and wellness outreach programs.</p>
+  </div>
+</section>
+
+<section id="extracurriculars">
+  <h2>Extracurriculars</h2>
+
+  <div class="card">
+    <h3>Clubs</h3>
+    <p>HOSA (Future Health Professionals), Science Club, Red Cross Club.</p>
+  </div>
+
+  <div class="card">
+    <h3>Sports & Leadership</h3>
+    <p>Varsity Track, Student Council Member, Peer Mentor.</p>
+  </div>
+</section>
+
+<footer>
+  © 2026 Nityasri Bhaskar. All rights reserved.
+</footer>
+
+</body>
+</html>
