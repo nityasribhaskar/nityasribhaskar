@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Student Portfolio – Your Name</title>
+  <title>Nityasri Bhaskar</title>
 
   <style>
     body {
@@ -154,6 +154,89 @@
       margin-top: 6px;
     }
 
+    /* TABLES */
+    .tables-container {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .table-wrapper {
+      flex: 1;
+      min-width: 300px;
+    }
+
+    .table-wrapper h3 {
+      margin-top: 0;
+      font-size: 20px;
+      color: #1f2937;
+    }
+
+    /* BLOCKS CONTAINER */
+    .blocks-container {
+      display: flex;
+      gap: 20px;
+      flex-wrap: nowrap;
+    }
+
+    /* GRID CONTAINER FOR BOOKS */
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    .block {
+      flex: 1;
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+      border-left: 4px solid #2d7a8f;
+    }
+
+    .block h3 {
+      margin-top: 0;
+      font-size: 18px;
+      color: #1a4d5c;
+    }
+
+    .block p {
+      margin-bottom: 0;
+      color: #4b5563;
+      font-size: 14px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: white;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    }
+
+    table th {
+      background: #1a4d5c;
+      color: white;
+      padding: 12px;
+      text-align: left;
+      font-weight: 600;
+    }
+
+    table td {
+      padding: 12px;
+      border-bottom: 1px solid #e5e7eb;
+    }
+
+    table tr:last-child td {
+      border-bottom: none;
+    }
+
+    table tr:hover {
+      background: #f9fafb;
+    }
+
     /* FOOTER */
     footer {
       text-align: center;
@@ -201,6 +284,9 @@
       <a href="#achievements">Achievements</a>
       <a href="#volunteering">Volunteering</a>
       <a href="#extracurriculars">Extracurriculars</a>
+      <a href="#booksiread">Books I Have Read</a>
+      <a href="#problems & solutions">Problems & Solutions</a>
+      
     </div>
 
     <div class="hamburger" onclick="toggleMenu()">
@@ -217,6 +303,8 @@
     <a href="#achievements">Achievements</a>
     <a href="#volunteering">Volunteering</a>
     <a href="#extracurriculars">Extracurriculars</a>
+    <a href="#booksiread">Books I Have Read</a>
+    <a href="#newsection">newsectiongggg</a>
   </div>
 </nav>
 
@@ -224,7 +312,7 @@
   <h2>About Me</h2>
   <div class="card">
     <p>
-      High school student passionate about medicine, community health, and scientific discovery.
+     High school student passionate about medicine, community health, and scientific discovery.
       My long‑term goal is to pursue a career in medicine and contribute to patient care and medical innovation.
     </p>
   </div>
@@ -234,10 +322,10 @@
   <h2>Projects</h2>
 
   <div class="card">
-    <h3>Human Anatomy Study Guide Website</h3>
-    <p>Created an interactive website to help students learn anatomy through diagrams, quizzes, and summaries.</p>
+    <h3>ACT Math Marathon</h3>
+    <p>Hosted an ACT Math Marathon to help students prepare for the math section of the ACT exam.</p>
     <div class="tags">
-      <span>Biology</span><span>HTML/CSS</span><span>Education</span>
+      <span>Math</span><span>Mentoring</span><span>Education</span>
     </div>
   </div>
 
@@ -253,14 +341,68 @@
 <section id="coursework">
   <h2>Coursework</h2>
 
-  <div class="card">
-    <h3>Advanced Science Courses</h3>
-    <p>Biology Honors, AP Biology, Chemistry Honors, Anatomy & Physiology, AP Psychology.</p>
-  </div>
+  <div class="tables-container">
+    <div class="table-wrapper">
+      <h3>Relevant Courses</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Advanced Science Courses</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Honors Biology</td></tr>
+          <tr><td>Honors Chemistry</td></tr>
+          <tr><td>Biotechnology</td></tr>
+         
+        </tbody>
+      </table>
+    </div>
 
-  <div class="card">
-    <h3>Relevant Skills</h3>
-    <p>Lab techniques, scientific writing, data interpretation, teamwork, patient‑care basics.</p>
+    <div class="table-wrapper">
+      <h3>Relevant Courses</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Advanced Math Courses</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Honors Geometry</td></tr>
+          <tr><td>Honors Algebra 2/ Trigonometry</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="table-wrapper">
+      <h3>Language Arts</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Advanced English Courses</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Honors English 1</td></tr>
+          <tr><td>Honors English 2</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="table-wrapper">
+      <h3>Certifications</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Advanced Social Studies Courses</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>AP Human Geography</td></tr>
+          <tr><td>AP World History</td></tr>
+        </tbody>
+      </table>
+    </div>
   </div>
 </section>
 
@@ -281,15 +423,23 @@
 <section id="volunteering">
   <h2>Volunteering</h2>
 
-  <div class="card">
-    <h3>Hospital or Clinic Volunteering</h3>
-    <p>Assisted with patient transport, front desk support, and organizing supplies.</p>
-  </div>
+  <div class="blocks-container">
+    <div class="block">
+      <h3>Teaching Assistant - Tamil School of Missouri</h3>
+      <p>72+ hours of mentoring students in the Tamil language.</p>
+    </div>
 
-  <div class="card">
-    <h3>Community Health Events</h3>
-    <p>Participated in blood drives, health fairs, and wellness outreach programs.</p>
+    <div class="block">
+      <h3>Math Tutoring</h3>
+      <p>13 hours of tutoring students in mathematics.</p>
+    </div>
+
+    <div class="block">
+      <h3>Bathukama Festival - TAGS</h3>
+      <p>8 hours of volunteering at the Bathukama Festival organized by the Telangana Association of Greater St.Louis.</p>
+    </div>
   </div>
+</section>
 </section>
 
 <section id="extracurriculars">
@@ -297,12 +447,62 @@
 
   <div class="card">
     <h3>Clubs</h3>
-    <p>HOSA (Future Health Professionals), Science Club, Red Cross Club.</p>
+    <p>Speech and Debate, HOSA (Future Health Professionals), Science Olympiad.</p>
   </div>
 
   <div class="card">
     <h3>Sports & Leadership</h3>
-    <p>Varsity Track, Student Council Member, Peer Mentor.</p>
+    <p>Varsity Tennis, Peer Mentor.</p>
+  </div>
+</section>
+
+<section id="booksiread">
+  <h2>Books I Have Read</h2>
+
+  <div class="grid-container">
+    <div class="block">
+      <h3>A Tale of Two Cities</h3>
+      <p>A Tale of Two cities explores the inequities of the French Revolution. </p>
+    </div>
+
+    <div class="block">
+      <h3>Frankenstein</h3>
+      <p>Frankenstein explores the consequences of unchecked ambition and the dangers of playing God.</p>
+      <p>Here is an essay I wrote about the book.</p>
+    </div>
+
+    <div class="block">
+      <h3>To Kill A Mockingbird</h3>
+      <p>To Kill A Mockingbird explores themes of racial injustice and moral growth in the American South.</p>
+      <p>Here is an essay I wrote about the book.</p>
+    </div>
+
+    <div class="block">
+      <h3>Samurai's Garden</h3>
+      <p>Samurai's Garden explores themes of identity and belonging in a multicultural setting.</p>
+      <p>Here is an essay I wrote about the book.</p>
+    </div>
+  </div>
+</section>
+
+<section id="Problems">
+  <h2>Problems & Solutions</h2>
+
+  <div class="blocks-container">
+    <div class="block">
+      <h3>Rational Functions Mind-Map</h3>
+      <p><strong>Problem:</strong> Students lack an integrated, visual understanding of rational functions that connects equations, graphs, and real-world applications.</p>
+      <p><strong>Solution:</strong> Created a <a href="https://www.activestem.org/resources/Graph_rational.svg" target="_blank">mind-map</a> to visualize the key concepts and relationships. This resource helps both teachers and students understand complex rational function concepts through integrated visual learning.</p>
+      
+    </div>
+
+    <div class="block">
+      <h3>Honors Biology Study Guide</h3>
+      <p><strong>Problem:</strong> Students were struggling with biology concepts.</p>
+      <p><strong>Solution:</strong> I created a comprehensive study <a href="https://docs.google.com/document/d/1QILWELWNHl8VdgZHIqmaV4GgYlqmS9gTLOqTJMJNnLg/edit?usp=sharing" target="_blank">guide</a> to help students better understand the material and prepare for the final exam.</p>
+      
+      
+    </div>
   </div>
 </section>
 
