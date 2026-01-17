@@ -297,12 +297,144 @@
 
     /* RESPONSIVE */
     @media (max-width: 768px) {
+      header {
+        padding: 30px 20px;
+      }
+
+      header h1 {
+        font-size: 28px;
+      }
+
+      header p {
+        font-size: 14px;
+      }
+
+      .circular-image {
+        width: 150px;
+        height: 210px;
+        margin: 0 auto 15px;
+      }
+
       .nav-links {
         display: none;
       }
 
       .hamburger {
         display: flex;
+      }
+
+      section {
+        margin: 30px auto;
+        padding: 0 15px;
+      }
+
+      section h2 {
+        font-size: 22px;
+        margin-bottom: 12px;
+      }
+
+      .card {
+        padding: 15px;
+        margin-bottom: 15px;
+      }
+
+      .card h3 {
+        font-size: 18px;
+      }
+
+      .tables-container {
+        flex-wrap: wrap;
+      }
+
+      .table-wrapper {
+        min-width: 100%;
+      }
+
+      .blocks-container {
+        flex-wrap: wrap;
+      }
+
+      .block {
+        min-width: 100%;
+      }
+
+      .grid-container {
+        grid-template-columns: 1fr;
+      }
+
+      .book-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      .book-cover {
+        width: 80px;
+        height: 120px;
+      }
+
+      .project-images img {
+        width: 100%;
+      }
+
+      .project-images {
+        flex-direction: column;
+      }
+
+      table {
+        font-size: 13px;
+      }
+
+      table th,
+      table td {
+        padding: 8px;
+      }
+
+      footer {
+        font-size: 12px;
+        padding: 15px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      header h1 {
+        font-size: 24px;
+      }
+
+      header p {
+        font-size: 12px;
+      }
+
+      section {
+        margin: 20px auto;
+        padding: 0 10px;
+      }
+
+      section h2 {
+        font-size: 20px;
+      }
+
+      .circular-image {
+        width: 120px;
+        height: 170px;
+      }
+
+      .card h3 {
+        font-size: 16px;
+      }
+
+      .block h3,
+      .book-content h3 {
+        font-size: 16px;
+      }
+
+      .tags span {
+        font-size: 11px;
+        padding: 3px 8px;
+      }
+
+      .nav-container {
+        padding: 8px 15px;
       }
     }
   </style>
