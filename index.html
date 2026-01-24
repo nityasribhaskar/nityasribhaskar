@@ -2,722 +2,829 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Nityasri Bhaskar</title>
-
-    <style>
-        body {
-            margin: 0;
-            font-family: "Segoe UI", sans-serif;
-            background: #e8f4f8;
-            color: #1f2937;
-            line-height: 1.6;
-        }
-
-        /* HEADER */
-        header {
-            background: linear-gradient(135deg, #1a4d5c, #2d7a8f);
-            color: white;
-            padding: 40px 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 40px;
-            text-align: left;
-        }
-
-        .header-content {
-            max-width: 800px;
-        }
-
-        header h1 {
-            margin: 0;
-            font-size: 42px;
-            font-weight: 700;
-        }
-
-        header p {
-            margin-top: 8px;
-            font-size: 18px;
-            opacity: 0.95;
-        }
-
-        /* CIRCULAR IMAGE STYLE - NOW RECTANGULAR */
-        .circular-image {
-            width: 200px;
-            /* Adjusted width for rectangle */
-            height: 250px;
-            /* Adjusted height for rectangle */
-            border-radius: 12px;
-            /* Rounded rectangle */
-            object-fit: cover;
-            display: block;
-            flex-shrink: 0;
-            border: 4px solid white;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-        }
-
-        /* NAVIGATION */
-        nav {
-            background: white;
-            border-bottom: 1px solid #e5e7eb;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-
-        .nav-container {
-            max-width: 1000px;
-            margin: auto;
-            padding: 10px 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 20px;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: #374151;
-            font-weight: 500;
-        }
-
-        .nav-links a:hover {
-            color: #0ea5e9;
-        }
-
-        /* HAMBURGER */
-        .hamburger {
-            display: none;
-            flex-direction: column;
-            cursor: pointer;
-            gap: 5px;
-        }
-
-        .hamburger span {
-            width: 25px;
-            height: 3px;
-            background: #374151;
-            border-radius: 3px;
-        }
-
-        /* MOBILE MENU */
-        .mobile-menu {
-            display: none;
-            flex-direction: column;
-            background: white;
-            padding: 10px 20px;
-            border-bottom: 1px solid #e5e7eb;
-        }
-
-        .mobile-menu a {
-            padding: 10px 0;
-            text-decoration: none;
-            color: #374151;
-            border-bottom: 1px solid #e5e7eb;
-        }
-
-        .mobile-menu a:last-child {
-            border-bottom: none;
-        }
-
-        /* SECTIONS */
-        section {
-            max-width: 900px;
-            margin: 40px auto;
-            padding: 0 20px;
-        }
-
-        section h2 {
-            font-size: 26px;
-            margin-bottom: 16px;
-            color: #1a4d5c;
-            border-left: 4px solid #2d7a8f;
-            padding-left: 10px;
-        }
-
-        .card {
-            background: white;
-            padding: 20px;
-            border-radius: 12px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
-            margin-bottom: 20px;
-        }
-
-        .card h3 {
-            margin-top: 0;
-            font-size: 20px;
-            color: #1f2937;
-        }
-
-        .tags span {
-            display: inline-block;
-            background: #d4e8f0;
-            color: #1a4d5c;
-            padding: 4px 10px;
-            border-radius: 999px;
-            font-size: 12px;
-            margin-right: 6px;
-            margin-top: 6px;
-        }
-
-        /* TABLES */
-        .tables-container {
-            display: flex;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
-
-        .table-wrapper {
-            flex: 1;
-            min-width: 300px;
-        }
-
-        .table-wrapper h3 {
-            margin-top: 0;
-            font-size: 20px;
-            color: #1f2937;
-        }
-
-        /* BLOCKS CONTAINER */
-        .blocks-container {
-            display: flex;
-            gap: 20px;
-            flex-wrap: nowrap;
-        }
-
-        /* GRID CONTAINER FOR BOOKS */
-        .grid-container {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 20px;
-        }
-
-        .block {
-            flex: 1;
-            background: white;
-            padding: 20px;
-            border-radius: 12px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
-            border-left: 4px solid #2d7a8f;
-        }
-
-        .block h3 {
-            margin-top: 0;
-            font-size: 18px;
-            color: #1a4d5c;
-        }
-
-        .block p {
-            margin-bottom: 0;
-            color: #4b5563;
-            font-size: 14px;
-        }
-
-        /* BOOK COVER */
-        .book-container {
-            display: flex;
-            gap: 15px;
-            align-items: flex-start;
-        }
-
-        .book-cover {
-            width: 100px;
-            height: 150px;
-            flex-shrink: 0;
-            border-radius: 6px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-            object-fit: cover;
-        }
-
-        .book-content {
-            flex: 1;
-        }
-
-        .book-content h3 {
-            margin-top: 0;
-            font-size: 18px;
-            color: #1a4d5c;
-        }
-
-        .book-content p {
-            margin: 8px 0;
-            color: #4b5563;
-            font-size: 14px;
-        }
-
-        /* PROJECT IMAGES */
-        .project-images {
-            display: flex;
-            gap: 15px;
-            margin-top: 15px;
-            flex-wrap: wrap;
-        }
-
-        .project-images img {
-            width: 48%;
-            height: auto;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-            object-fit: cover;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            background: white;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
-        }
-
-        table th {
-            background: #1a4d5c;
-            color: white;
-            padding: 12px;
-            text-align: left;
-            font-weight: 600;
-        }
-
-        table td {
-            padding: 12px;
-            border-bottom: 1px solid #e5e7eb;
-        }
-
-        table tr:last-child td {
-            border-bottom: none;
-        }
-
-        table tr:hover {
-            background: #f9fafb;
-        }
-
-        /* FOOTER */
-        footer {
-            text-align: center;
-            padding: 20px;
-            margin-top: 40px;
-            background: #eef2f7;
-            color: #6b7280;
-            font-size: 14px;
-        }
-
-        /* RESPONSIVE */
-        @media (max-width: 768px) {
-            header {
-                flex-direction: column;
-                text-align: center;
-                gap: 20px;
-            }
-
-            header h1 {
-                font-size: 28px;
-            }
-
-            header p {
-                font-size: 14px;
-            }
-
-            .circular-image {
-                width: 150px;
-                height: 190px;
-                margin: 0;
-            }
-
-            .nav-links {
-                display: none;
-            }
-
-            .hamburger {
-                display: flex;
-            }
-
-            section {
-                margin: 30px auto;
-                padding: 0 15px;
-            }
-
-            section h2 {
-                font-size: 22px;
-                margin-bottom: 12px;
-            }
-
-            .card {
-                padding: 15px;
-                margin-bottom: 15px;
-            }
-
-            .card h3 {
-                font-size: 18px;
-            }
-
-            .tables-container {
-                flex-wrap: wrap;
-            }
-
-            .table-wrapper {
-                min-width: 100%;
-            }
-
-            .blocks-container {
-                flex-wrap: wrap;
-            }
-
-            .block {
-                min-width: 100%;
-            }
-
-            .grid-container {
-                grid-template-columns: 1fr;
-            }
-
-            .book-container {
-                flex-direction: column;
-                align-items: center;
-                text-align: center;
-            }
-
-            .book-cover {
-                width: 80px;
-                height: 120px;
-            }
-
-            .project-images img {
-                width: 100%;
-            }
-
-            .project-images {
-                flex-direction: column;
-            }
-
-            table {
-                font-size: 13px;
-            }
-
-            table th,
-            table td {
-                padding: 8px;
-            }
-
-            footer {
-                font-size: 12px;
-                padding: 15px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            header h1 {
-                font-size: 24px;
-            }
-
-            header p {
-                font-size: 12px;
-            }
-
-            section {
-                margin: 20px auto;
-                padding: 0 10px;
-            }
-
-            section h2 {
-                font-size: 20px;
-            }
-
-            .circular-image {
-                width: 120px;
-                height: 170px;
-            }
-
-            .card h3 {
-                font-size: 16px;
-            }
-
-            .block h3,
-            .book-content h3 {
-                font-size: 16px;
-            }
-
-            .tags span {
-                font-size: 11px;
-                padding: 3px 8px;
-            }
-
-            .nav-container {
-                padding: 8px 15px;
-            }
-        }
-    </style>
-
-    <script>
-        function toggleMenu() {
-            const menu = document.getElementById("mobileMenu");
-            menu.style.display = menu.style.display === "flex" ? "none" : "flex";
-        }
-    </script>
+ <meta charset="UTF-8" />
+ <meta name="viewport" content="width=device-width, initial-scale=1" />
+ <title>Nityasri Bhaskar</title>
+
+ <style>
+ body {
+ margin: 0;
+ font-family: "Segoe UI", sans-serif;
+ background: #e8f4f8;
+ color: #1f2937;
+ line-height: 1.6;
+ }
+
+ /* HEADER */
+ header {
+ background: linear-gradient(135deg, #1a4d5c, #2d7a8f);
+ color: white;
+ padding: 40px 20px;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ gap: 40px;
+ text-align: left;
+ }
+
+ .header-content {
+ max-width: 800px;
+ }
+
+ header h1 {
+ margin: 0;
+ font-size: 42px;
+ font-weight: 700;
+ }
+
+ header p {
+ margin-top: 8px;
+ font-size: 18px;
+ opacity: 0.95;
+ }
+
+ /* CIRCULAR IMAGE STYLE - NOW RECTANGULAR */
+ .circular-image {
+ width: 200px;
+ /* Adjusted width for rectangle */
+ height: 250px;
+ /* Adjusted height for rectangle */
+ border-radius: 12px;
+ /* Rounded rectangle */
+ object-fit: cover;
+ display: block;
+ flex-shrink: 0;
+ border: 4px solid white;
+ box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+ }
+
+ /* NAVIGATION */
+ nav {
+ background: white;
+ border-bottom: 1px solid #e5e7eb;
+ position: sticky;
+ top: 0;
+ z-index: 1000;
+ }
+
+ .nav-container {
+ max-width: 1000px;
+ margin: auto;
+ padding: 10px 20px;
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ }
+
+ .nav-links {
+ display: flex;
+ gap: 20px;
+ }
+
+ .nav-links a {
+ text-decoration: none;
+ color: #374151;
+ font-weight: 600;
+ padding: 8px 16px;
+ border-radius: 20px;
+ transition: all 0.2s ease;
+ background-color: transparent;
+ }
+
+ .nav-links a:hover {
+ color: #1a4d5c;
+ background-color: #e8f4f8;
+ transform: translateY(-1px);
+ }
+
+ /* HAMBURGER */
+ .hamburger {
+ display: none;
+ flex-direction: column;
+ cursor: pointer;
+ gap: 5px;
+ }
+
+ .hamburger span {
+ width: 25px;
+ height: 3px;
+ background: #374151;
+ border-radius: 3px;
+ }
+
+ /* MOBILE MENU */
+ .mobile-menu {
+ display: none;
+ flex-direction: column;
+ background: white;
+ padding: 10px 20px;
+ border-bottom: 1px solid #e5e7eb;
+ }
+
+ .mobile-menu a {
+ padding: 10px 0;
+ text-decoration: none;
+ color: #374151;
+ border-bottom: 1px solid #e5e7eb;
+ }
+
+ .mobile-menu a:last-child {
+ border-bottom: none;
+ }
+
+ /* SECTIONS */
+ section {
+ width: 100%;
+ padding: 50px 0;
+ margin: 0;
+ }
+
+ section:nth-of-type(even) {
+ background-color: #f8fafc;
+ }
+
+ section:nth-of-type(odd) {
+ background-color: #ffffff;
+ }
+
+ .content-wrapper {
+ max-width: 900px;
+ margin: 0 auto;
+ padding: 0 20px;
+ }
+
+ section h2 {
+ font-size: 26px;
+ margin-bottom: 16px;
+ color: #1a4d5c;
+ border-left: 4px solid #2d7a8f;
+ padding-left: 10px;
+ }
+
+ .card {
+ background: white;
+ padding: 20px;
+ border-radius: 12px;
+ box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+ margin-bottom: 20px;
+ }
+
+ .card h3 {
+ margin-top: 0;
+ font-size: 20px;
+ color: #1f2937;
+ }
+
+ .tags span {
+ display: inline-block;
+ background: #d4e8f0;
+ color: #1a4d5c;
+ padding: 4px 10px;
+ border-radius: 999px;
+ font-size: 12px;
+ margin-right: 6px;
+ margin-top: 6px;
+ }
+
+ /* TABLES */
+ .tables-container {
+ display: flex;
+ gap: 20px;
+ flex-wrap: wrap;
+ overflow-x: auto;
+ /* Ensure scrolling on small screens if needed */
+ }
+
+ .table-responsive {
+ overflow-x: auto;
+ -webkit-overflow-scrolling: touch;
+ margin-bottom: 20px;
+ border-radius: 8px;
+ box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+ }
+
+ .table-wrapper {
+ flex: 1;
+ min-width: 300px;
+ }
+
+ .table-wrapper h3 {
+ margin-top: 0;
+ font-size: 20px;
+ color: #1f2937;
+ }
+
+ /* BLOCKS CONTAINER */
+ .blocks-container {
+ display: flex;
+ gap: 20px;
+ flex-wrap: nowrap;
+ }
+
+ /* GRID CONTAINER FOR BOOKS */
+ .grid-container {
+ display: grid;
+ grid-template-columns: repeat(2, 1fr);
+ gap: 20px;
+ }
+
+ .block {
+ flex: 1;
+ background: white;
+ padding: 20px;
+ border-radius: 12px;
+ box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+ border-left: 4px solid #2d7a8f;
+ }
+
+ .block h3 {
+ margin-top: 0;
+ font-size: 18px;
+ color: #1a4d5c;
+ }
+
+ .block p {
+ margin-bottom: 0;
+ color: #4b5563;
+ font-size: 14px;
+ }
+
+ /* BOOK COVER */
+ .book-container {
+ display: flex;
+ gap: 15px;
+ align-items: flex-start;
+ }
+
+ .book-cover {
+ width: 100px;
+ height: 150px;
+ flex-shrink: 0;
+ border-radius: 6px;
+ box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+ object-fit: cover;
+ }
+
+ .book-content {
+ flex: 1;
+ }
+
+ .book-content h3 {
+ margin-top: 0;
+ font-size: 18px;
+ color: #1a4d5c;
+ }
+
+ .book-content p {
+ margin: 8px 0;
+ color: #4b5563;
+ font-size: 14px;
+ }
+
+ /* PROJECT IMAGES */
+ .project-images {
+ display: flex;
+ gap: 15px;
+ margin-top: 15px;
+ flex-wrap: wrap;
+ }
+
+ .project-images img {
+ width: 48%;
+ height: auto;
+ border-radius: 8px;
+ box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+ object-fit: cover;
+ }
+
+ table {
+ width: 100%;
+ border-collapse: collapse;
+ background: white;
+ /* Removed shadow here as wrapper handles it for scroll context */
+ }
+
+ table th {
+ background: #1a4d5c;
+ color: white;
+ padding: 12px;
+ text-align: left;
+ font-weight: 600;
+ }
+
+ table td {
+ padding: 12px;
+ border-bottom: 1px solid #e5e7eb;
+ }
+
+ table tr:last-child td {
+ border-bottom: none;
+ }
+
+ table tr:hover {
+ background: #f9fafb;
+ }
+
+ /* FOOTER */
+ footer {
+ text-align: center;
+ padding: 20px;
+ margin-top: 40px;
+ background: #eef2f7;
+ color: #6b7280;
+ font-size: 14px;
+ }
+
+ /* RESPONSIVE */
+ @media (max-width: 768px) {
+ header {
+ flex-direction: column;
+ text-align: center;
+ gap: 20px;
+ }
+
+ header h1 {
+ font-size: 28px;
+ }
+
+ header p {
+ font-size: 14px;
+ }
+
+ .circular-image {
+ width: 150px;
+ height: 190px;
+ margin: 0;
+ }
+
+ .nav-links {
+ display: none;
+ }
+
+ .hamburger {
+ display: flex;
+ }
+
+ section {
+ margin: 30px auto;
+ padding: 0 15px;
+ }
+
+ section h2 {
+ font-size: 22px;
+ margin-bottom: 12px;
+ }
+
+ .card {
+ padding: 15px;
+ margin-bottom: 15px;
+ }
+
+ .card h3 {
+ font-size: 18px;
+ }
+
+ .tables-container {
+ flex-wrap: wrap;
+ }
+
+ .table-wrapper {
+ min-width: 100%;
+ }
+
+ .blocks-container {
+ flex-wrap: wrap;
+ }
+
+ .block {
+ min-width: 100%;
+ }
+
+ .grid-container {
+ grid-template-columns: 1fr;
+ }
+
+ .book-container {
+ flex-direction: column;
+ align-items: center;
+ text-align: center;
+ }
+
+ .book-cover {
+ width: 80px;
+ height: 120px;
+ }
+
+ .project-images img {
+ width: 100%;
+ }
+
+ .project-images {
+ flex-direction: column;
+ }
+
+ table {
+ font-size: 13px;
+ }
+
+ table th,
+ table td {
+ padding: 8px;
+ }
+
+ footer {
+ font-size: 12px;
+ padding: 15px;
+ }
+ }
+
+ @media (max-width: 480px) {
+ header h1 {
+ font-size: 24px;
+ }
+
+ header p {
+ font-size: 12px;
+ }
+
+ section {
+ padding: 30px 0;
+ }
+
+ .content-wrapper {
+ padding: 0 15px;
+ }
+
+ section h2 {
+ font-size: 20px;
+ }
+
+ .circular-image {
+ width: 120px;
+ height: 170px;
+ }
+
+ .card h3 {
+ font-size: 16px;
+ }
+
+ .block h3,
+ .book-content h3 {
+ font-size: 16px;
+ }
+
+ .tags span {
+ font-size: 11px;
+ padding: 3px 8px;
+ }
+
+ .nav-container {
+ padding: 8px 15px;
+ }
+ }
+ </style>
+
+ <script>
+ function toggleMenu() {
+ const menu = document.getElementById("mobileMenu");
+ menu.style.display = menu.style.display === "flex" ? "none" : "flex";
+ }
+ </script>
 </head>
 
 <body>
 
-    <header>
-        <img src="images/mypic.jpg" alt="Student Photo" class="circular-image">
-        <div class="header-content">
-            <h1>Nityasri Bhaskar</h1>
-            <p style="font-size: 1.1em; font-weight: 500; margin-bottom: 16px;">Future Medical Professional · High
-                School Student · Passionate about mathematics, medicine and STEM leadership.</p>
-            <p style="opacity: 0.9; font-size: 1em; line-height: 1.6;">
-                High school student at Parkway Central High School passionate about medicine, community health, and
-                scientific discovery.
-                My long‑term goal is to pursue a career in medicine and contribute to patient care and medical
-                innovation.
-            </p>
-        </div>
-    </header>
+ <header>
+ <img src="images/mypic.jpg" alt="Student Photo" class="circular-image">
+ <div class="header-content">
+ <h1>Nityasri Bhaskar</h1>
+ <p style="font-size: 1.1em; font-weight: 500; margin-bottom: 16px;">Future Medical Professional · High
+ School Student · Passionate about mathematics, medicine and STEM leadership.</p>
+ <p style="opacity: 0.9; font-size: 1em; line-height: 1.6;">
+ High school student at Parkway Central High School passionate about medicine, community health, and
+ scientific discovery.
+ My long‑term goal is to pursue a career in medicine and contribute to patient care and medical
+ innovation.
+ </p>
+ </div>
+ </header>
 
-    <nav>
-        <div class="nav-container">
-            <div class="nav-links">
-                <a href="#student-leadership">Student Leadership</a>
-                <a href="#coursework">Coursework</a>
-                <a href="#achievements">Achievements</a>
-                <a href="#volunteering">Volunteering</a>
-                <a href="#extracurriculars">Extracurriculars</a>
-                <a href="#booksiread">Literature Explored</a>
-                <a href="#contributions">Contributions</a>
-            </div>
-    </nav>
-
-
-
-    <section id="student-leadership">
-        <h2>Student Leadership</h2>
-
-        <div class="card">
-            <h3>ACT Math Marathon</h3>
-            <p>Hosted an ACT Math Marathon to help students prepare for the math section of the ACT exam.</p>
-            <div class="project-images">
-                <img src="images/act1.jpg" alt="ACT Math Marathon Event 1">
-                <img src="images/act2.jpg" alt="ACT Math Marathon Event 2">
-            </div>
-            <div class="tags">
-                <span>Math</span><span>Mentoring</span><span>Education</span>
-            </div>
-        </div>
+ <nav>
+ <div class="nav-container">
+ <div class="nav-links">
+ <a href="#student-leadership">Student Leadership</a>
+ <a href="#coursework">Coursework</a>
+ <a href="#achievements">Achievements</a>
+ <a href="#volunteering">Volunteering</a>
+ <a href="#extracurriculars">Extracurriculars</a>
+ <a href="#booksiread">Literature Explored</a>
+ <a href="#contributions">Contributions</a>
+ </div>
+ </nav>
 
 
 
-    </section>
+ <section id="student-leadership">
+ <div class="content-wrapper">
+ <h2>Student Leadership</h2>
 
-    <section id="coursework">
-        <h2>Coursework</h2>
+ <div class="card">
+ <h3>ACT Math Marathon</h3>
+ <p>Hosted an ACT Math Marathon to help students prepare for the math section of the ACT exam.</p>
+ <div class="project-images">
+ <img src="images/act1.jpg" alt="ACT Math Marathon Event 1">
+ <img src="images/act2.jpg" alt="ACT Math Marathon Event 2">
+ </div>
+ <div class="tags">
+ <span>Math</span><span>Mentoring</span><span>Education</span>
+ </div>
+ </div>
 
-        <table>
-            <thead>
-                <tr>
-                    <th>Grade Level</th>
-                    <th>Science</th>
-                    <th>Math</th>
-                    <th>English</th>
-                    <th>Social Studies</th>
-                    <th>Electives</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><strong>Grade 9</strong></td>
-                    <td>Honors Biology</td>
-                    <td>Honors Geometry</td>
-                    <td>Honors English 1</td>
-                    <td>AP Human Geography</td>
-                    <td>-</td>
-                </tr>
-                <tr>
-                    <td><strong>Grade 10</strong></td>
-                    <td>Honors Chemistry<br>Biotechnology</td>
-                    <td>Honors Alg 2/Trig</td>
-                    <td>Honors English 2</td>
-                    <td>AP World History</td>
-                    <td>-</td>
-                </tr>
-            </tbody>
-        </table>
-    </section>
+ <div class="card">
+ <h3>DNA Replication Seminar</h3>
+ <p><strong>Upcoming: 8 March 2026</strong> - Seminar for middle school students at the Daniel Boone
+ Library, Saint Louis, MO.</p>
+ <div class="tags">
+ <span>Biology</span><span>Public Speaking</span><span>Community Outreach</span>
+ </div>
+ </div>
+ </div>
+ </section>
 
-    <section id="achievements">
-        <h2>Achievements</h2>
+ <section id="coursework">
+ <div class="content-wrapper">
+ <h2>Coursework</h2>
 
-        <div class="card">
-            <h3>Tennis Tournament Winner</h3>
-            <p>Won 1st place in the Dhvani Tennis Tournament and raised money for charity.</p>
-            <div class="project-images">
-                <img src="images/sports1.JPG" alt="Sports - Tennis Event">
-            </div>
-        </div>
+ <div class="table-responsive">
+ <table>
+ <thead>
+ <tr>
+ <th>Grade Level</th>
+ <th>Science</th>
+ <th>Math</th>
+ <th>English</th>
+ <th>Social Studies</th>
+ <th>Electives</th>
+ </tr>
+ </thead>
+ <tbody>
+ <tr>
+ <td><strong>Grade 9</strong></td>
+ <td>Honors Biology</td>
+ <td>Honors Geometry</td>
+ <td>Honors English 1</td>
+ <td>AP Human Geography</td>
+ <td>-</td>
+ </tr>
+ <tr>
+ <td><strong>Grade 10</strong></td>
+ <td>Honors Chemistry<br>Biotechnology</td>
+ <td>Honors Alg 2/Trig</td>
+ <td>Honors English 2</td>
+ <td>AP World History</td>
+ <td>-</td>
+ </tr>
+ </tbody>
+ </table>
+ </div>
+ </div>
+ </section>
 
-        <div class="card">
-            <h3>Scholar Athlete Honor Award</h3>
-            <p>Awarded by Parkway Central High School for achieving a 4.286 GPA while participating in interscholastic
-                Girls Tennis (2024-2025 & 2025-2026).</p>
-            <div class="project-images">
-                <img src="athlete_award_1769278535726.png" alt="Scholar Athlete Award"
-                    style="max-width: 150px; height: auto; border-radius: 8px; margin: 10px 0;">
-            </div>
-            <div class="tags">
-                <span>Scholar Athlete</span><span>GPA 4.286</span><span>Varsity Tennis</span>
-            </div>
-        </div>
+ <section id="achievements">
+ <h2>Achievements</h2>
 
+ <div class="card">
+ <h3>Tennis Tournament Winner</h3>
+ <p><strong>21 August 2025</strong> - Won 1st place in the Dhvani Tennis Tournament and raised money for
+ charity.</p>
+ <div class="project-images">
+ <img src="images/sports1.JPG" alt="Sports - Tennis Event">
+ </div>
+ </div>
 
-    </section>
-
-    <section id="volunteering">
-        <h2>Volunteering</h2>
-
-        <table>
-            <thead>
-                <tr>
-                    <th style="width: 25%;">Time Period</th>
-                    <th style="width: 30%;">Role & Organization</th>
-                    <th>Activity & Impact</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>2023 - Present</td>
-                    <td><strong>Teaching Assistant</strong><br>Tamil School of Missouri</td>
-                    <td>Mentored students in the Tamil language for <span style="font-weight: 600; color: #0f766e;">72+
-                            hours</span>, facilitating language acquisition and
-                        cultural connection.</td>
-                </tr>
-                <tr>
-                    <td>August 2025</td>
-                    <td><strong>Math Tutor</strong><br>Independent</td>
-                    <td>Provided <span style="font-weight: 600; color: #0f766e;">13 hours</span> of one-on-one
-                        mathematics tutoring to help students master core concepts.</td>
-                </tr>
-                <tr>
-                    <td>Sunday, 28 September 2025</td>
-                    <td><strong>Volunteer</strong><br>Bathukama Festival (TAGS)</td>
-                    <td>Contributed <span style="font-weight: 600; color: #0f766e;">8 hours</span> to the organization
-                        and execution of a major cultural festival for the
-                        Telangana Association.</td>
-                </tr>
-            </tbody>
-        </table>
-    </section>
-
-    <section id="extracurriculars">
-        <h2>Extracurriculars</h2>
-
-        <div class="blocks-container">
-            <div class="block">
-                <h3>Clubs</h3>
-                <p>Speech and Debate, HOSA (Future Health Professionals), Science Olympiad.</p>
-            </div>
-
-            <div class="block">
-                <h3>Sports & Leadership</h3>
-                <p>Varsity Tennis, Peer Mentor.</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="booksiread">
-        <h2>Literature Explored</h2>
-
-        <div class="grid-container">
-            <div class="block">
-                <div class="book-container">
-                    <img src="https://images.squarespace-cdn.com/content/v1/5e1fec6b1e0b0b52a7cb7211/1641954089161-YWQYG7YUJ5APQ44Z46MY/file-AD874523-E2D1-43DC-A5D5-E6C71B036D1C.png?format=750w"
-                        alt="A Tale of Two Cities Cover" class="book-cover">
-                    <div class="book-content">
-                        <h3>A Tale of Two Cities</h3>
-                        <p>Set during the French Revolution, this novel weaves themes of sacrifice, resurrection, and
-                            redemption through interconnected stories of love and betrayal, revealing how personal
-                            choices impact historical events and collective suffering.</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="block">
-                <div class="book-container">
-                    <img src="https://d3525k1ryd2155.cloudfront.net/f/714/527/9780451527714.PE.0.l.jpg"
-                        alt="Frankenstein Cover" class="book-cover">
-                    <div class="book-content">
-                        <h3>Frankenstein</h3>
-                        <p>Through the tragic tale of Victor Frankenstein and his creation, this Gothic masterpiece
-                            examines the responsibility that comes with innovation, the psychological toll of isolation,
-                            and what it means to be human in a world that rejects difference.</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="block">
-                <div class="book-container">
-                    <img src="https://m.media-amazon.com/images/I/81O7u0dGaWL._AC_UF1000,1000_QL80_.jpg"
-                        alt="To Kill a Mockingbird Cover" class="book-cover">
-                    <div class="book-content">
-                        <h3>To Kill A Mockingbird</h3>
-                        <p>This American classic, set in Depression-era Alabama, confronts systemic racism and moral
-                            courage through the eyes of a young girl discovering that true heroism means standing
-                            against injustice despite societal pressure and personal cost.</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="block">
-                <div class="book-container">
-                    <img src="https://m.media-amazon.com/images/I/7169i62f13L._AC_UF1000,1000_QL80_.jpg"
-                        alt="Samurai's Garden Cover" class="book-cover">
-                    <div class="book-content">
-                        <h3>Samurai's Garden</h3>
-                        <p>A lyrical novel exploring themes of identity, belonging, and healing in a multicultural
-                            setting. Through the protagonist's journey in a Japanese garden, the story weaves together
-                            personal transformation, cultural richness, and the power of beauty and nature to mend the
-                            soul.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="contributions">
-        <h2>Contributions</h2>
-
-        <div class="blocks-container">
-            <div class="block">
-                <h3>Rational Functions Mind-Map</h3>
-                <p><strong>Problem:</strong> Students lack an integrated, visual understanding of rational functions
-                    that connects equations, graphs, and real-world applications.</p>
-                <p><strong>Solution:</strong> Created a <a
-                        href="https://www.activestem.org/resources/Graph_rational.svg" target="_blank">mind-map</a> to
-                    visualize the key concepts and relationships. This resource helps both teachers and students
-                    understand complex rational function concepts through integrated visual learning.</p>
-
-            </div>
-
-            <div class="block">
-                <h3>Honors Biology Study Guide</h3>
-                <p><strong>Problem:</strong> Despite engaging lectures, students struggled to synthesize diverse biology
-                    topics into a unified framework, resulting in surface-level memorization rather than deep conceptual
-                    understanding needed for advanced science courses.</p>
-                <p><strong>Solution:</strong> I created a comprehensive study <a
-                        href="https://docs.google.com/document/d/1QILWELWNHl8VdgZHIqmaV4GgYlqmS9gTLOqTJMJNnLg/edit?usp=sharing"
-                        target="_blank">guide</a> to help students better understand the material and prepare for the
-                    final exam.</p>
+ <div class="card">
+ <h3>Scholar Athlete Honor Award</h3>
+ <p>Awarded by Parkway Central High School for achieving a 4.286 GPA while participating in interscholastic
+ Girls Tennis (2024-2025 & 2025-2026).</p>
+ <div class="project-images">
+ <img src="athlete_award_1769278535726.png" alt="Scholar Athlete Award"
+ style="max-width: 150px; height: auto; border-radius: 8px; margin: 10px 0;">
+ </div>
+ <div class="tags">
+ <span>Scholar Athlete</span><span>GPA 4.286</span><span>Varsity Tennis</span>
+ </div>
+ </div>
 
 
-            </div>
-        </div>
-    </section>
+ </section>
 
-    <footer>
-        ©️ 2026 Nityasri Bhaskar. All rights reserved.
-    </footer>
+ <section id="volunteering">
+ <div class="content-wrapper">
+ <h2>Volunteering</h2>
+
+ <div class="table-responsive">
+ <table>
+ <thead>
+ <tr>
+ <th style="width: 25%;">Time Period</th>
+ <th style="width: 30%;">Role & Organization</th>
+ <th>Activity & Impact</th>
+ </tr>
+ </thead>
+ <tbody>
+ <tr>
+ <td>2023 - Present</td>
+ <td><strong>Teaching Assistant</strong><br>Tamil School of Missouri</td>
+ <td>Mentored students in the Tamil language for <span
+ style="font-weight: 600; color: #0f766e;">72+
+ hours</span>, facilitating language acquisition and
+ cultural connection.</td>
+ </tr>
+ <tr>
+ <td>August 2025</td>
+ <td><strong>Math Tutor</strong><br>Independent</td>
+ <td>Provided <span style="font-weight: 600; color: #0f766e;">13 hours</span> of one-on-one
+ mathematics tutoring to help students master core concepts.</td>
+ </tr>
+ <tr>
+ <td>Sunday, 28 September 2025</td>
+ <td><strong>Volunteer</strong><br>Bathukama Festival (TAGS)</td>
+ <td>
+ Contributed <span style="font-weight: 600; color: #0f766e;">8 hours</span> to the
+ organization and execution of a major cultural festival for the Telangana Association.
+ <br>
+ <a href="images/TAGS.png" target="_blank" style="display:inline-block; margin-top:8px;">
+ <img src="images/TAGS.png" alt="Bathukamma Festival"
+ style="height: 40px; width: auto; border-radius: 4px; border: 1px solid #ddd;">
+ </a>
+ </td>
+ </tr>
+ </tbody>
+ </table>
+ </div>
+ </div>
+ </section>
+
+ <section id="extracurriculars">
+ <div class="content-wrapper">
+ <h2>Extracurriculars</h2>
+
+ <div class="block" style="border-left: none; box-shadow: none; padding: 0;">
+ <h3 style="border-bottom: 2px solid #e5e7eb; padding-bottom: 10px; margin-bottom: 20px;">Clubs</h3>
+ <ul style="list-style: none; padding: 0;">
+ <li style="margin-bottom: 25px;">
+ <h4 style="margin: 0 0 5px 0; color: #1f2937; font-size: 18px;">Speech and Debate</h4>
+ <p style="margin: 0; color: #4b5563; padding-left: 20px; border-left: 3px solid #2d7a8f;">
+ <strong>14 & 15 November:</strong> Parkway West High School<br>
+ <strong>22 November 2025:</strong> Wydown Middle School
+ </p>
+ </li>
+ <li style="margin-bottom: 25px;">
+ <h4 style="margin: 0 0 5px 0; color: #1f2937; font-size: 18px;">HOSA (Future Health
+ Professionals)</h4>
+ <p style="margin: 0; color: #4b5563; padding-left: 20px; border-left: 3px solid #2d7a8f;">
+ Active member participating in health science competitions and leadership development.
+ </p>
+ </li>
+ <li style="margin-bottom: 25px;">
+ <h4 style="margin: 0 0 5px 0; color: #1f2937; font-size: 18px;">Science Olympiad</h4>
+ <p style="margin: 0; color: #4b5563; padding-left: 20px; border-left: 3px solid #2d7a8f;">
+ Competed throughout Middle School (all 3 years) and continuing in High School.
+ </p>
+ </li>
+ </ul>
+
+ <h3
+ style="border-bottom: 2px solid #e5e7eb; padding-bottom: 10px; margin-bottom: 20px; margin-top: 40px;">
+ Sports & Leadership</h3>
+ <ul style="list-style: none; padding: 0;">
+ <li style="margin-bottom: 15px;">
+ <strong>Varsity Tennis:</strong> Competing at the varsity level, demonstrating teamwork,
+ discipline, and athletic excellence.
+ </li>
+ <li style="margin-bottom: 15px;">
+ <strong>Peer Mentor:</strong> Guiding and supporting peers to foster a collaborative school
+ environment.
+ </li>
+ </ul>
+ </div>
+ </div>
+ </section>
+
+ <section id="booksiread">
+ <div class="content-wrapper">
+ <h2>Literature Explored</h2>
+
+ <div class="grid-container">
+ <div class="block">
+ <div class="book-container">
+ <img src="https://images.squarespace-cdn.com/content/v1/5e1fec6b1e0b0b52a7cb7211/1641954089161-YWQYG7YUJ5APQ44Z46MY/file-AD874523-E2D1-43DC-A5D5-E6C71B036D1C.png?format=750w"
+ alt="A Tale of Two Cities Cover" class="book-cover">
+ <div class="book-content">
+ <h3>A Tale of Two Cities</h3>
+ <p>Set during the French Revolution, this novel weaves themes of sacrifice, resurrection,
+ and
+ redemption through interconnected stories of love and betrayal, revealing how personal
+ choices impact historical events and collective suffering.</p>
+ </div>
+ </div>
+ </div>
+
+ <div class="block">
+ <div class="book-container">
+ <img src="https://d3525k1ryd2155.cloudfront.net/f/714/527/9780451527714.PE.0.l.jpg"
+ alt="Frankenstein Cover" class="book-cover">
+ <div class="book-content">
+ <h3>Frankenstein</h3>
+ <p>Through the tragic tale of Victor Frankenstein and his creation, this Gothic masterpiece
+ examines the responsibility that comes with innovation, the psychological toll of
+ isolation,
+ and what it means to be human in a world that rejects difference.</p>
+ </div>
+ </div>
+ </div>
+
+ <div class="block">
+ <div class="book-container">
+ <img src="https://m.media-amazon.com/images/I/81O7u0dGaWL._AC_UF1000,1000_QL80_.jpg"
+ alt="To Kill a Mockingbird Cover" class="book-cover">
+ <div class="book-content">
+ <h3>To Kill A Mockingbird</h3>
+ <p>This American classic, set in Depression-era Alabama, confronts systemic racism and moral
+ courage through the eyes of a young girl discovering that true heroism means standing
+ against injustice despite societal pressure and personal cost.</p>
+ </div>
+ </div>
+ </div>
+
+ <div class="block">
+ <div class="book-container">
+ <img src="https://m.media-amazon.com/images/I/7169i62f13L._AC_UF1000,1000_QL80_.jpg"
+ alt="Samurai's Garden Cover" class="book-cover">
+ <div class="book-content">
+ <h3>Samurai's Garden</h3>
+ <p>A lyrical novel exploring themes of identity, belonging, and healing in a multicultural
+ setting. Through the protagonist's journey in a Japanese garden, the story weaves
+ together
+ personal transformation, cultural richness, and the power of beauty and nature to mend
+ the
+ soul.</p>
+ </div>
+ </div>
+ </div>
+ </div>
+ </div>
+ </section>
+
+ <section id="contributions">
+ <div class="content-wrapper">
+ <h2>Contributions</h2>
+
+ <div class="blocks-container">
+ <div class="block">
+ <h3>Rational Functions Mind-Map</h3>
+ <p><strong>Challenge:</strong> Students often struggle to connect algebraic equations of rational
+ functions with their graphical behavior and real-world constraints.</p>
+ <p><strong>Contribution:</strong> Designed an integrated <a
+ href="https://www.activestem.org/resources/Graph_rational.svg" target="_blank"
+ style="font-weight: 600;">visual mind-map</a> that synthesizes asymptotes, intercepts, and
+ domain restrictions into a cohesive learning tool.</p>
+ <a href="https://www.activestem.org/resources/Graph_rational.svg" target="_blank"
+ style="display:block; margin-top:12px;">
+ <img src="https://www.activestem.org/resources/Graph_rational.svg"
+ alt="Rational Functions Mind Map Preview"
+ style="height: 150px; width: auto; border-radius: 6px; border: 1px solid #e5e7eb; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
+ </a>
+ </div>
+
+ <div class="block">
+ <h3>Honors Biology Study Guide</h3>
+ <p><strong>Challenge:</strong> The breadth of the honors biology curriculum makes it difficult for
+ students to transition from isolated facts to deep conceptual understanding.</p>
+ <p><strong>Contribution:</strong> Developed a comprehensive <a
+ href="https://docs.google.com/document/d/1QILWELWNHl8VdgZHIqmaV4GgYlqmS9gTLOqTJMJNnLg/edit?usp=sharing"
+ target="_blank" style="font-weight: 600;">semester review guide</a> structuring complex
+ biological systems into accessible, study-ready modules.</p>
+ <a href="https://docs.google.com/document/d/1QILWELWNHl8VdgZHIqmaV4GgYlqmS9gTLOqTJMJNnLg/edit?usp=sharing"
+ target="_blank" class="doc-link-card"
+ style="display: block; margin-top: 15px; padding: 15px; background: #f3f4f6; border-radius: 8px; text-decoration: none; color: #1f2937; border: 1px solid #e5e7eb;">
+ <div style="font-weight: 600;">View Study Guide</div>
+ <div style="font-size: 0.9em; color: #6b7280;">Google Docs Document</div>
+ </a>
+ </div>
+ </div>
+ </div>
+ </section>
+
+ <footer>
+ <div style="margin-bottom: 20px;">
+ <a href="mailto:nityasribhaskar@gmail.com"
+ style="background-color: #1a4d5c; color: white; padding: 12px 24px; text-decoration: none; border-radius: 25px; font-weight: 600; display: inline-block; transition: background-color 0.2s;">Contact
+ Me</a>
+ </div>
+ <p style="margin-top: 10px; font-weight: 500; color: #374151;">nityasribhaskar@gmail.com</p>
+ <p style="margin-top: 20px; font-size: 0.9em; opacity: 0.8;">© 2026 Nityasri Bhaskar. All rights reserved.</p>
+ </footer>
 
 </body>
 
